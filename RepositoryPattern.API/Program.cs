@@ -21,7 +21,7 @@ Log.Logger = new LoggerConfiguration()
     // structured in JSON format
     .WriteTo.File(new JsonFormatter(),
         "important.json",
-        restrictedToMinimumLevel: LogEventLevel.Warning)
+        LogEventLevel.Warning)
     // add a rolling file for all logs
     .WriteTo.File("loggingInformation-.logs",
         rollingInterval: RollingInterval.Day)
@@ -33,7 +33,8 @@ Log.Logger = new LoggerConfiguration()
 builder.Services.AddDbContextFactory<DataContext>(
     options =>
     {
-        options.UseNpgsql(@"Server=127.0.0.1;Port=5433;Database=RepositoryPattern;UserId=postgres;", b => b.MigrationsAssembly("RepoositoryPattern.API"));
+        options.UseNpgsql(@"Server=127.0.0.1;Port=5433;Database=RepositoryPattern;UserId=postgres;",
+            b => b.MigrationsAssembly("RepositoryPattern.API"));
     });
 
 builder.Services.AddScoped(typeof(GenericRepository<>));

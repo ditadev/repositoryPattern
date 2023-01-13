@@ -2,6 +2,7 @@
 using DataAccess.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace RepoositoryPattern.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230113131612_first")]
+    partial class first
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace RepoositoryPattern.API.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Developer", b =>
+            modelBuilder.Entity("Models.Developer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,7 +43,7 @@ namespace RepoositoryPattern.API.Migrations
                     b.ToTable("Developers");
                 });
 
-            modelBuilder.Entity("Domain.Project", b =>
+            modelBuilder.Entity("Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

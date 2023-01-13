@@ -1,2 +1,0 @@
-{"Timestamp":"2023-01-13T15:53:25.3362660+01:00","Level":"Error","MessageTemplate":"Error logging for Developer with {@person} popularity at {now}","Properties":{"person":35,"now":"2023-01-13T15:53:25.3362460+01:00"}}
-{"Timestamp":"2023-01-13T15:53:25.3365490+01:00","Level":"Warning","MessageTemplate":"Warning Developer with {@person} popularity at {now}","Properties":{"person":35,"now":"2023-01-13T15:53:25.3365470+01:00"}}

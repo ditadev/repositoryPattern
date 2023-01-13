@@ -1,2 +1,2 @@
 # repositoryPattern
-A minimalist project sing repository patter and unit of work, implementing serilog for documentation.
+A minimalist API using repository pattern and unit of work, implementing serilog for logging.

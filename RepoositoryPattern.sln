@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoositoryPattern.API", "RepoositoryPattern.API\RepoositoryPattern.API.csproj", "{50045B3A-A6C2-434B-A573-3667D97BA6FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPattern.API", "RepositoryPattern.API\RepositoryPattern.API.csproj", "{50045B3A-A6C2-434B-A573-3667D97BA6FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{BCA18A32-0DC1-49E9-BDA5-AE78FD98D01D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{BCA18A32-0DC1-49E9-BDA5-AE78FD98D01D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.EFCore", "DataAccess.EFCore\DataAccess.EFCore.csproj", "{18BE35BC-6778-4297-8C61-E3B70CA3965C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Persistence", "DataAccess.Persistence\DataAccess.Persistence.csproj", "{18BE35BC-6778-4297-8C61-E3B70CA3965C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

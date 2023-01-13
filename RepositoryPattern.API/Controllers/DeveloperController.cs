@@ -9,11 +9,12 @@ namespace RepoositoryPattern.API.Controllers;
 public class DeveloperController : ControllerBase
 {
     private readonly UnitOfWork _unitOfWork;
+
     public DeveloperController(UnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
-    
+
     [HttpPost]
     public IActionResult AddDeveloperAndProject()
     {
@@ -31,9 +32,9 @@ public class DeveloperController : ControllerBase
         _unitOfWork.Complete();
         return Ok();
     }
-    
+
     [HttpGet]
-    public IActionResult GetPopularDevelopers([FromQuery]int count)
+    public IActionResult GetPopularDevelopers([FromQuery] int count)
     {
         var popularDevelopers = _unitOfWork.Developers.GetPopularDevelopers(count);
         return Ok(popularDevelopers);

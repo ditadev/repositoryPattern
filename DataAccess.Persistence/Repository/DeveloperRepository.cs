@@ -3,11 +3,12 @@ using Serilog;
 
 namespace DataAccess.EFCore.Repository;
 
-public class DeveloperRepository:GenericRepository<Developer>
+public class DeveloperRepository : GenericRepository<Developer>
 {
-    public DeveloperRepository(DataContext context):base(context)
+    public DeveloperRepository(DataContext context) : base(context)
     {
     }
+
     public IEnumerable<Developer> GetPopularDevelopers(int count)
     {
         Log.Debug("Debug logging for Developer with {@person} popularity at {now}", count, DateTime.Now);
