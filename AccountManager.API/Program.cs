@@ -2,6 +2,9 @@ using AccountManager.Domain;
 using Contract;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using Serilog;
+using Serilog.Events;
+using Serilog.Formatting.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,21 @@ builder.Services.AddDbContextFactory<RepositoryContext>(
     });
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.AddAutoMapper(typeof(Program));
+
+Log.Logger = new LoggerConfiguration()
+    // add console as logging target
+    .WriteTo.Console()
+    // add a logging target for warnings and higher severity  logs
+    // structured in JSON format
+    .WriteTo.File(new JsonFormatter(),
+        "importantLoggingInformation.json",
+        restrictedToMinimumLevel: LogEventLevel.Warning)
+    // add a rolling file for all logs
+    .WriteTo.File("allLoggingInformation-.logs",
+        rollingInterval: RollingInterval.Day)
+    // set default minimum level
+    .MinimumLevel.Debug()
+    .CreateLogger();
 
 var app = builder.Build();
 

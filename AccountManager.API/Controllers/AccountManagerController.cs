@@ -3,6 +3,7 @@ using AccountManager.Domain.Models;
 using AutoMapper;
 using Contract;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace AccountManager.API.Controllers;
 
@@ -28,12 +29,14 @@ namespace AccountManager.API.Controllers;
             {
                 var owners = _repository.Owner.GetAllOwners();
                 _logger.LogInformation($"Returned all owners from database.");
+                Log.Information("Returned all owners from database.: {@owners}", owners);
                 var ownersResult = _mapper.Map<IEnumerable<OwnerDto>>(owners);
                 return Ok(ownersResult);
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside GetAllOwners action: {ex.Message}");
+                Log.Error("Something went wrong inside GetAllOwners action: {@ex}", ex.Message);
                 return StatusCode(500, "Internal server error");
             }
         }
