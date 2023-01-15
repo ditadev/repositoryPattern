@@ -1,2 +1,2 @@
 # repositoryPattern
-A minimalist API using repository pattern and unit of work, implementing serilog for logging.
+A minimalist API using repository pattern and unit of work, implementing XUnit test for testing.
