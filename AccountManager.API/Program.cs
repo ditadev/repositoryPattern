@@ -15,12 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContextFactory<RepositoryContext>(
-    options =>
-    {
-        options.UseNpgsql(@"Server=127.0.0.1;Port=5433;Database=AccountManager;UserId=postgres;", b => b.MigrationsAssembly("AccountManager.API")
-            );
-    });
+builder.Services.AddDbContextFactory<RepositoryContext>();
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.AddAutoMapper(typeof(Program));
 

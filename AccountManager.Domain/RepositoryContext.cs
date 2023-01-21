@@ -5,9 +5,15 @@ namespace AccountManager.Domain;
 
 public class RepositoryContext:DbContext
 {
-    public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options)
+    public RepositoryContext()
     {
     }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseNpgsql(@"Server=127.0.0.1;Port=5433;Database=AccountManager;UserId=postgres;");
+    }
+    
     public DbSet<Owner>? Owners { get; set; }
     public DbSet<Account>? Accounts { get; set; }
 }

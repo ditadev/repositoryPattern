@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AccountManager.API.Migrations
+namespace AccountManager.Domain.Migrations
 {
-    public partial class first : Migration
+    /// <inheritdoc />
+    public partial class second : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -49,6 +51,7 @@ namespace AccountManager.API.Migrations
                 column: "OwnerId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
